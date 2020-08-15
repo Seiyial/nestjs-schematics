@@ -18,7 +18,7 @@ import {
 import { ApplicationOptions } from './application.schema';
 
 export function main(options: ApplicationOptions): Rule {
-  options.name = strings.dasherize(options.name);
+  options.name = strings.classify(options.name);
 
   const path =
     !options.directory || options.directory === 'undefined'

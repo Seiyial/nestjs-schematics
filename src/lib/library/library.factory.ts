@@ -56,7 +56,7 @@ function transform(options: LibraryOptions): LibraryOptions {
     throw new SchematicsException('Option (name) is required.');
   }
   target.language = !!target.language ? target.language : DEFAULT_LANGUAGE;
-  target.name = strings.dasherize(target.name);
+  target.name = strings.classify(target.name);
   target.path =
     target.path !== undefined
       ? join(normalize(defaultSourceRoot), target.path)

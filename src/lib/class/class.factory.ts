@@ -30,7 +30,7 @@ function transform(options: ClassOptions): ClassOptions {
   }
   const location: Location = new NameParser().parse(target);
 
-  target.name = strings.dasherize(location.name);
+  target.name = strings.classify(location.name);
   if (target.name.includes('.')) {
     target.className = strings.classify(target.name).replace('.', '');
   } else {
@@ -40,7 +40,7 @@ function transform(options: ClassOptions): ClassOptions {
   target.language =
     target.language !== undefined ? target.language : DEFAULT_LANGUAGE;
 
-  target.path = strings.dasherize(location.path);
+  target.path = strings.underscore(location.path);
   target.path = target.flat
     ? target.path
     : join(target.path as Path, target.name);

@@ -39,9 +39,9 @@ function transform(source: ModuleOptions): ModuleOptions {
   target.type = 'module';
 
   const location: Location = new NameParser().parse(target);
-  target.name = strings.dasherize(location.name);
+  target.name = strings.classify(location.name);
   target.language = target.language !== undefined ? target.language : 'ts';
-  target.path = strings.dasherize(location.path);
+  target.path = strings.underscore(location.path);
 
   target.path = target.flat
     ? target.path

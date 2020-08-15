@@ -42,14 +42,14 @@ export function main(options: AngularOptions): Rule {
 
 function transform(source: AngularOptions): ModuleOptions {
   const target: AngularOptions = Object.assign({}, source);
-  target.directory = target.name ? strings.dasherize(target.name) : 'client';
+  target.directory = target.name ? strings.underscore(target.name) : 'client';
   target.name = 'Angular';
   target.metadata = 'imports';
   target.type = 'module';
 
   const location: Location = new NameParser().parse(target);
-  target.name = strings.dasherize(location.name);
-  target.path = join(strings.dasherize(location.path) as Path, target.name);
+  target.name = strings.classify(location.name);
+  target.path = join(strings.classify(location.path) as Path, target.name);
   return target;
 }
 

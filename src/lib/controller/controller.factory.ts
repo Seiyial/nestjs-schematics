@@ -45,8 +45,8 @@ function transform(source: ControllerOptions): ControllerOptions {
   target.type = ELEMENT_TYPE;
 
   const location: Location = new NameParser().parse(target);
-  target.name = strings.dasherize(location.name);
-  target.path = strings.dasherize(location.path);
+  target.name = strings.classify(location.name);
+  target.path = strings.underscore(location.path);
   target.language =
     target.language !== undefined ? target.language : DEFAULT_LANGUAGE;
 

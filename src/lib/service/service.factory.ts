@@ -46,8 +46,8 @@ function transform(source: ServiceOptions): ServiceOptions {
     throw new SchematicsException('Option (name) is required.');
   }
   const location: Location = new NameParser().parse(target);
-  target.name = strings.dasherize(location.name);
-  target.path = strings.dasherize(location.path);
+  target.name = strings.classify(location.name);
+  target.path = strings.underscore(location.path);
   target.language = target.language !== undefined ? target.language : 'ts';
 
   target.path = target.flat
