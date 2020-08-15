@@ -1,5 +1,5 @@
 {
-  "name": "@nestjs/schematics",
+  "name": "@seiyial/nestjs-schematics",
   "version": "7.0.1",
   "description": "Nest - modern, fast, powerful node.js web framework (@schematics)",
   "main": "dist/index.js",
